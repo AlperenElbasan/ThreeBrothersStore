@@ -6,5 +6,12 @@
         version="4.0">
 
     <!-- Config here. -->
-
+    <filter>
+        <filter-name>auth</filter-name>
+        <filter-class>filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>auth</filter-name>
+        <url-pattern>/checkout</url-pattern>
+    </filter-mapping>
 </web-app>

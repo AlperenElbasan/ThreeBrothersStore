@@ -1,24 +1,24 @@
 package domain;
 
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product {
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private final int id ;
+    private final String id;
     private String name;
     private Double price;
 
     public Product() {
-        this.id = count.incrementAndGet();
+        this.id = UUID.randomUUID().toString();
     }
 
     public Product(String name, Double price) {
-        this.id = count.incrementAndGet();
+        this();
         this.name = name;
         this.price = price;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

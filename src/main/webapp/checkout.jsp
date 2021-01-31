@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="domain.Cart" %><%--
   Created by IntelliJ IDEA.
   User: asus-b
@@ -9,23 +10,19 @@
 <html>
 <head>
     <title>Checkout</title>
-    <style>
-        footer{
-            width: max-content;
-            margin: auto;
-        }
-    </style>
+    <script src="resources/js/checkout.js"></script>
 </head>
 <body>
 <%@include file="shared/navbar.jsp" %>
- <h1>Thank you for shopping with us. You total is: ${total}</h1>
-<footer>
-    <form method="post">
-        <label>Send to: <input type="text" name="address"/></label>
-        <button>Place an Order</button>
-    </form>
-
-</footer>
-
+<h1>Thank you for shopping with us. You total is: ${me.cart.totalCost}</h1>
+<p>
+    ${me.cart.products}
+</p>
+<form method="post" id="checkout-form">
+    <label>
+        Address should be: <input type="text" name="address"/>
+    </label>
+    <input type="submit" value="Place an Order">
+</form>
 </body>
 </html>

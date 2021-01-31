@@ -1,34 +1,27 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
 
-    private ArrayList<Product> products;
+    private final List<Product> products = new ArrayList<Product>();
 
-    public Cart() {
-        this.products = new ArrayList<Product>();
-    }
-
-    public void add(Product p){
+    public void addProduct(Product p) {
         products.add(p);
     }
 
-    public void remove(int id){
-        products.removeIf(p-> p.getId() == id);
+    public void removeProduct(String id) {
+        products.removeIf(p -> p.getId().equals(id));
     }
 
     public ArrayList<Product> getProducts() {
-        return products;
+        return new ArrayList<>(products);
     }
 
-    public void setProducts(ArrayList<Product> products) {
-        this.products = products;
-    }
-
-    public Double total(){
-       return this.products.stream()
-               .map(p->p.getPrice())
-                .reduce(0.0,Double::sum);
+    public Double getTotalCost() {
+        return this.products.stream()
+                .map(Product::getPrice)
+                .reduce(0.0, Double::sum);
     }
 }

@@ -13,13 +13,14 @@
 <%--<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>--%>
 <html>
 <head>
-    <title>Shopping page</title>
+    <title>Three Brothers - Our Products</title>
     <style>
-        #main{
+        #main {
             clear: right;
             overflow: auto;
         }
-        .product{
+
+        .product {
             display: inline-block;
             border: 1px dashed gray;
             border-radius: 3px;
@@ -27,37 +28,42 @@
             padding: 10px;
             margin: 10px;
         }
-        h1#welcome{
+
+        h1#welcome {
             width: max-content;
             margin: auto;
         }
-        h1{
+
+        h1 {
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
 <%@include file="shared/navbar.jsp" %>
+
 <section id="main">
-    <h1 id="welcome">Welcome ${user}</h1>
+    <c:if test="${user != null}">
+        <h1 id="welcome">Welcome ${user}!</h1>
+    </c:if>
+    <c:if test="${user == null}">
+        <h1 id="welcome">Welcome Guest!</h1>
+    </c:if>
     <h1>Products</h1>
 
-<c:forEach items="${products}" var = "p">
-    <div class='product'>
-        <form method='post'>
-            <p class='detail'>${p.name}</p>
-            <p class='detail'>${p.price}</p>
-            <p class='detail'>${p.name}</p>
-            <input type='hidden' name='prodId' value="${p.id}"/>
-            <input type='submit' value='Add to Cart' class='detail' id='add'/>
-        </form>
-    </div>
-</c:forEach>
-
-
+    <c:forEach items="${products}" var="p">
+        <div class='product'>
+            <form method='post'>
+                <p class='detail'>${p.name}</p>
+                <p class='detail'>${p.price}</p>
+                <p class='detail'>${p.name}</p>
+                <input type='hidden' name='prodId' value="${p.id}"/>
+                <input type='submit' value='Add to Cart' class='detail' id='add'/>
+            </form>
+        </div>
+    </c:forEach>
 </section>
-
-
 
 </body>
 

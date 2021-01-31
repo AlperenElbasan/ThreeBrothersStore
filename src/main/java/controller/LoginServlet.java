@@ -13,7 +13,7 @@ import java.util.Optional;
 @WebServlet({"/login"})
 public class LoginServlet extends HttpServlet {
 
-    List<User> users = new ArrayList<User>();
+    List<User> users = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,13 +28,15 @@ public class LoginServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        //instead of this we should ajax for the project to check the existance of user
+        //instead of this we should ajax for the project to check the existence of user
         Optional<User> userObj = users.stream().filter(x->x.getUserName().equals(userName)
                 &&x.getPassword().equals(password))
                 .findAny();
+
         if (userObj.isPresent()){
             User user = userObj.get();
             session.setAttribute("user", userName);
+            session.setAttribute("me", user);
             session.setAttribute("userObj", user);
 
             if ("yes".equals(remember)){
@@ -55,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        users.add(new User("Badis Saidani",
-                "Badis","saidanii.badis@gmail.com","badis"));
+        users.add(new User("Badis Saidani", "Badis","saidanii.badis@gmail.com","badis"));
+        users.add(new User("admin", "admin", "admin", "admin"));
     }
 }

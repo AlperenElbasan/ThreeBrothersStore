@@ -2,15 +2,17 @@ controller/LogoutServlet.java
  controller.LogoutServlet
 domain/Product.java
  domain.Product
-controller/LoginServlet.java
- controller.LoginServlet
-controller/CheckoutServlet.java
- controller.CheckoutServlet
+controller/SignUpServlet.java
+ controller.SignUpServlet
+controller/ShoppingServlet.java
+ controller.ShoppingServlet
 domain/Cart.java
  domain.Cart
 domain/User.java
  domain.User
-controller/ShoppingServlet.java
- controller.ShoppingServlet
-controller/SignUpServlet.java
- controller.SignUpServlet
+controller/LoginServlet.java
+ controller.LoginServlet
+filter/AuthFilter.java
+ filter.AuthFilter
+controller/CheckoutServlet.java
+ controller.CheckoutServlet

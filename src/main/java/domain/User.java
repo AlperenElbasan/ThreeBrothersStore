@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class User {
     private static final AtomicInteger count = new AtomicInteger(0);
     private final int id ;
+    private final Cart cart;
     private String fullName;
     private String userName;
     private String email;
@@ -12,10 +13,11 @@ public class User {
 
     public User() {
         this.id = count.incrementAndGet();
+        this.cart = new Cart();
     }
 
     public User(String fullName, String userName, String email, String password) {
-        this.id = count.incrementAndGet();
+        this();
         this.fullName = fullName;
         this.userName = userName;
         this.email = email;
@@ -56,5 +58,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Cart getCart() {
+        return cart;
     }
 }
