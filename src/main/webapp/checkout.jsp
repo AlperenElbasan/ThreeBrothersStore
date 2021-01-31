@@ -10,32 +10,38 @@
 <html>
 <head>
     <title>Three Brothers - Checkout</title>
-    <style><%@include file="/resources/css/checkout.css"%></style>
+    <style><%@include file="/resources/css/products.css"%></style>
     <style><%@include file="/resources/css/layout.css"%></style>
     <script src="resources/js/checkout.js"></script>
 </head>
 <body>
 <header>
-    <%@include file="shared/navbar.jsp" %>
+    <%@include file="navbar.jsp" %>
 </header>
 
-<div class="mx-auto">
-    <p>Your cart contains these items</p>
-</div>
-<div class="row">
-    <c:forEach items="${cart.products}" var="product">
-        <div class="product col-3">
-            <p class='detail'>${product.name}</p>
-            <p class='price'>$${product.price}</p>
+<section class="mx-auto">
+    <article>
+        <div class="mx-auto">
+            <p>Your cart contains these items</p>
         </div>
-    </c:forEach>
-</div>
-<p>Thank you for shopping with us. You total is: $${cart.totalCost}</p>
-<form method="post" class="mt-3" id="checkout-form">
-    <label>
-        Send these items to this address: <input type="text" name="address"/>
-    </label>
-    <input type="submit" value="Place an Order">
-</form>
+        <div class="row">
+            <c:forEach items="${cart.products}" var="product">
+                <div class="product col-3">
+                    <p class='detail'>${product.name}</p>
+                    <p class='price'>$${product.price}</p>
+                </div>
+            </c:forEach>
+        </div>
+    </article>
+    <article>
+        <p>Thank you for shopping with us. You total is: $${cart.totalCost}</p>
+        <form method="post" class="mt-3" id="checkout-form">
+            <label>
+                Send these items to this address: <input type="text" name="address"/>
+            </label>
+            <input type="submit" value="Place an Order">
+        </form>
+    </article>
+</section>
 </body>
 </html>

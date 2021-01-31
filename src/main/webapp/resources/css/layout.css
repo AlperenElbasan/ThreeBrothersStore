@@ -1,3 +1,22 @@
+/** Colors **/
+body {
+    --background: f6f5f5;
+    --light: #D3e0ea;
+    --primary: #1687A7;
+    --secondary: #276678;
+    background-color: var(--background);
+    margin: 0;
+}
+
+a {
+    color: var(--secondary);
+}
+
+h1 {
+    color: var(--primary);
+    font-size: xx-large;
+}
+
 .row {
     flex-direction: row;
 }
@@ -48,6 +67,13 @@
     width: 8.33%;
 }
 
+
+.ml-2 {
+    margin-left: 4px;
+}
+.ml-3 {
+    margin-left: 12px;
+}
 .mt-3 {
     margin-top: 12px;
 }

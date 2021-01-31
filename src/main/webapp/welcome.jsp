@@ -15,30 +15,28 @@
 <head>
     <title>Three Brothers - Our Products</title>
     <style><%@include file="/resources/css/welcome.css"%></style>
+    <style><%@include file="/resources/css/layout.css"%></style>
+    <style><%@include file="/resources/css/products.css"%></style>
 </head>
 <body>
 
-<%@include file="shared/navbar.jsp" %>
+<%@include file="navbar.jsp" %>
 
-<section id="main">
-    <c:if test="${user != null}">
-        <h1 id="welcome">Welcome ${user}!</h1>
-    </c:if>
-    <c:if test="${user == null}">
-        <h1 id="welcome">Welcome Guest!</h1>
-    </c:if>
-    <h1>Products</h1>
+<section class="ml-3" style="display:block;">
+    <h1 class="ml-3">Our Products</h1>
 
-    <c:forEach items="${products}" var="p">
-        <div class='product'>
-            <form method='post'>
-                <p class='detail'>${p.name}</p>
-                <p class='price'>${p.price}</p>
-                <input type='hidden' name='prodId' value="${p.id}"/>
-                <input type='submit' value='Add to Cart' class='detail' id='add'/>
-            </form>
-        </div>
-    </c:forEach>
+    <div class="row">
+        <c:forEach items="${products}" var="product">
+            <div class="product col-2">
+                <form method='post'>
+                    <p class='detail'>${product.name}</p>
+                    <p class='price'>$${product.price}</p>
+                    <input type='hidden' name='prodId' value="${product.id}"/>
+                    <input type='submit' value='Add to Cart' class='detail' id='add'/>
+                </form>
+            </div>
+        </c:forEach>
+    </div>
 </section>
 
 </body>
