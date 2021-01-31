@@ -27,7 +27,7 @@ public class SignUpServlet extends HttpServlet {
         // in the project we should pass the whole user object
         // in order to use it in the checkout
         session.setAttribute("user", userName);
-        session.setAttribute("userObj", user);
+        session.setAttribute("me", user);
         resp.sendRedirect("/shopping");
 
     }

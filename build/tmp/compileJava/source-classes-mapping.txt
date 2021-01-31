@@ -12,7 +12,7 @@ domain/User.java
  domain.User
 controller/LoginServlet.java
  controller.LoginServlet
-filter/AuthFilter.java
- filter.AuthFilter
 controller/CheckoutServlet.java
  controller.CheckoutServlet
+filter/AuthFilter.java
+ filter.AuthFilter

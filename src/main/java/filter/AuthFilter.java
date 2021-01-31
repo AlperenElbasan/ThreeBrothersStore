@@ -12,7 +12,7 @@ public class AuthFilter extends HttpFilter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) req;
-        if (httpServletRequest.getSession().getAttribute("user") != null){
+        if (httpServletRequest.getSession().getAttribute("me") != null){
             chain.doFilter(req, res);
         } else {
             httpServletRequest.getRequestDispatcher("login.jsp").forward(req, res);
