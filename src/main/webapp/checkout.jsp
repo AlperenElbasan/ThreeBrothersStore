@@ -19,7 +19,11 @@
     <style>
         <%@include file="/resources/css/checkout.css" %>
     </style>
-    <script src="resources/js/checkout.js"></script>
+    <script>
+        function checkout() {
+
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -48,7 +52,7 @@
                 <label>Shipping Address:
                     <textarea class="w-100 mt-3" rows="10" cols="50" name="address"></textarea>
                 </label>
-                <input type="submit" value="Place an Order">
+                <input type="submit" onclick="checkout()" value="Place an Order">
             </form>
         </article>
     </section>

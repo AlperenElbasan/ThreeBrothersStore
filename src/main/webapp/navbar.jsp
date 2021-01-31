@@ -6,9 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<style><%@include file="resources/css/navbar.css"%></style>
+<style>
+    <%@include file="resources/css/navbar.css" %>
+</style>
 <nav>
-    <ul class="menu-bar">
+    <ul class="menu-bar" style="height: fit-content">
+        <li>
+            <a href="shopping">Home</a>
+        </li>
         <c:if test="${user != null}">
             <li>
                 <span>${user}'s Cart (${cart.productsSize})</span>
