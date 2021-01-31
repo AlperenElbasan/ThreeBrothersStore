@@ -14,30 +14,7 @@
 <html>
 <head>
     <title>Three Brothers - Our Products</title>
-    <style>
-        #main {
-            clear: right;
-            overflow: auto;
-        }
-
-        .product {
-            display: inline-block;
-            border: 1px dashed gray;
-            border-radius: 3px;
-            text-align: center;
-            padding: 10px;
-            margin: 10px;
-        }
-
-        h1#welcome {
-            width: max-content;
-            margin: auto;
-        }
-
-        h1 {
-            margin-top: 20px;
-        }
-    </style>
+    <style><%@include file="/resources/css/welcome.css"%></style>
 </head>
 <body>
 
@@ -56,8 +33,7 @@
         <div class='product'>
             <form method='post'>
                 <p class='detail'>${p.name}</p>
-                <p class='detail'>${p.price}</p>
-                <p class='detail'>${p.name}</p>
+                <p class='price'>${p.price}</p>
                 <input type='hidden' name='prodId' value="${p.id}"/>
                 <input type='submit' value='Add to Cart' class='detail' id='add'/>
             </form>

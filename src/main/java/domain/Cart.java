@@ -19,6 +19,10 @@ public class Cart {
         return new ArrayList<>(products);
     }
 
+    public int getProductsSize() {
+        return products.size();
+    }
+
     public Double getTotalCost() {
         return this.products.stream()
                 .map(Product::getPrice)

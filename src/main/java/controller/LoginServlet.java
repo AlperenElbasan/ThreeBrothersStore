@@ -38,15 +38,15 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", userName);
             session.setAttribute("me", user);
 
+            Cookie c;
             if ("yes".equals(remember)) {
-                Cookie c = new Cookie("user", userName);
+                c = new Cookie("user", userName);
                 c.setMaxAge(30 * 24 * 60 * 60);
-                resp.addCookie(c);
             } else {
-                Cookie c = new Cookie("user", null);
+                c = new Cookie("user", null);
                 c.setMaxAge(0);
-                resp.addCookie(c);
             }
+            resp.addCookie(c);
 
             resp.sendRedirect("/shopping");
         } else {

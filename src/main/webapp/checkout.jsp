@@ -9,18 +9,31 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Checkout</title>
+    <title>Three Brothers - Checkout</title>
+    <style><%@include file="/resources/css/checkout.css"%></style>
+    <style><%@include file="/resources/css/layout.css"%></style>
     <script src="resources/js/checkout.js"></script>
 </head>
 <body>
-<%@include file="shared/navbar.jsp" %>
-<h1>Thank you for shopping with us. You total is: ${me.cart.totalCost}</h1>
-<p>
-    ${me.cart.products}
-</p>
-<form method="post" id="checkout-form">
+<header>
+    <%@include file="shared/navbar.jsp" %>
+</header>
+
+<div class="mx-auto">
+    <p>Your cart contains these items</p>
+</div>
+<div class="row">
+    <c:forEach items="${cart.products}" var="product">
+        <div class="product col-3">
+            <p class='detail'>${product.name}</p>
+            <p class='price'>$${product.price}</p>
+        </div>
+    </c:forEach>
+</div>
+<p>Thank you for shopping with us. You total is: $${cart.totalCost}</p>
+<form method="post" class="mt-3" id="checkout-form">
     <label>
-        Address should be: <input type="text" name="address"/>
+        Send these items to this address: <input type="text" name="address"/>
     </label>
     <input type="submit" value="Place an Order">
 </form>
