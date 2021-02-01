@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet(urlPatterns = {"/", "/shopping"})
+@WebServlet(urlPatterns = {"", "/shopping"})
 public class ShoppingServlet extends HttpServlet {
     Cart cart = new Cart();
     List<Product> products = new ArrayList<>();
