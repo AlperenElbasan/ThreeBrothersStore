@@ -1,6 +1,7 @@
 package controller;
 
 import domain.User;
+import storage.Users;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +23,7 @@ public class SignUpServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         User user = new User(fullName,userName,email,password);
+        Users.addUser(user);
 
         HttpSession session = req.getSession();
         // in the project we should pass the whole user object
