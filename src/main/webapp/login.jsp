@@ -10,8 +10,9 @@
 <html>
 <head>
     <title>Login page</title>
-    <style><%@include file="resources/css/layout.css"%></style>
-    <style><%@include file="resources/css/auth.css"%></style>
+    <script src="<c:url value='resources/js/validation.js'/>" type="text/javascript"></script>
+    <link href="<c:url value='resources/css/layout.css'/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/auth.css" />" rel="stylesheet">
 </head>
 <body>
 <div class="mx-auto my-auto">
@@ -23,7 +24,7 @@
         <label>Remember Me: <input type="checkbox" name="remember" value="yes"/></label>
         <input type="submit" name="submit" value="Submit">
         <c:if test="${errMsg}">
-            <p style="color: red">${errMsg}</p>
+            <p style="color: #ff0000">${errMsg}</p>
         </c:if>
         <span class="ml-2 mt-5">Don't have an account yet? <a href="singUp">Sign up</a> </span>
     </form>
