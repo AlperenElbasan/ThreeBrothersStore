@@ -12,16 +12,19 @@
     <title>Login page</title>
     <link href="<c:url value='resources/css/layout.css' />" rel="stylesheet">
     <link href="<c:url value="resources/css/auth.css" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/form.css" />" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="mx-auto my-auto">
     <form class="auth-form" method="post" action="login">
         <h1>Three Brothers Store</h1>
         <p class="primary-color">Please login to continue</p>
-        <label>User Name: <input type="text" name="userName"/></label>
-        <label>Password: <input type="password" name="password"/></label>
+        <label>User Name: <input type="text" name="userName" class="form-control required" required /></label>
+        <label>Password: <input type="password" name="password" class="form-control required" required /></label>
         <label>Remember Me: <input type="checkbox" name="remember" value="yes"/></label>
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit" class="btn login-btn btn-block btn-primary text-uppercase">
         <c:if test="${errMsg}">
             <p style="color: #ff0000">${errMsg}</p>
         </c:if>
