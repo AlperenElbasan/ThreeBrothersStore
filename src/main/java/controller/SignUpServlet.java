@@ -28,7 +28,8 @@ public class SignUpServlet extends HttpServlet {
         // in order to use it in the checkout
         session.setAttribute("user", userName);
         session.setAttribute("me", user);
-        resp.sendRedirect("/shopping");
-
+        //resp.sendRedirect("/shopping");
+        resp.setContentType("text/html;charset=UTF-8");
+        resp.getWriter().write("True");
     }
 }

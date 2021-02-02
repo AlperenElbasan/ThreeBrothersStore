@@ -33,8 +33,8 @@
         <div class="input-group mb-1">
             <label>Remember Me: <input type="checkbox" name="remember" value="yes"/></label>
         </div>
-        <div class="input-group m-2 text-center">
-            <input type="submit" name="submit" value="LOGIN" class="btn login-btn btn-primary text-uppercase">
+        <div class="m-2 text-center">
+            <input type="submit" name="submit" value="LOGIN" class="btn login-btn w-100 btn-primary text-uppercase">
         </div>
         <c:if test="${errMsg}">
             <p style="color: #ff0000">${errMsg}</p>
