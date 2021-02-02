@@ -10,8 +10,7 @@
 <html>
 <head>
     <title>Login page</title>
-    <script src="<c:url value='resources/js/validation.js'/>" type="text/javascript"></script>
-    <link href="<c:url value='resources/css/layout.css'/>" rel="stylesheet">
+    <link href="<c:url value='resources/css/layout.css' />" rel="stylesheet">
     <link href="<c:url value="resources/css/auth.css" />" rel="stylesheet">
 </head>
 <body>
@@ -29,5 +28,7 @@
         <span class="ml-2 mt-5">Don't have an account yet? <a href="singUp">Sign up</a> </span>
     </form>
 </div>
+<script src="<c:url value='resources/js/jquery.js' />" type="text/javascript"></script>
+<script src="<c:url value='resources/js/validation.js' />" type="text/javascript"></script>
 </body>
 </html>
