@@ -15,9 +15,9 @@
 <html>
 <head>
     <title>Three Brothers - Our Products</title>
-    <style><%@include file="/resources/css/welcome.css"%></style>
-    <style><%@include file="/resources/css/layout.css"%></style>
-    <style><%@include file="/resources/css/products.css"%></style>
+    <link href="resources/css/welcome.css" rel="stylesheet">
+    <link href="resources/css/layout.css" rel="stylesheet">
+    <link href="resources/css/products.css" rel="stylesheet">
 
     <script type="text/javascript" src="resources/js/shopping.js"></script>
 </head>
