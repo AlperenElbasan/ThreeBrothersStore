@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="prod" uri="org.example.my-custom-tags" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Arrays" %>
 <%@ page import="java.util.List" %>
@@ -17,6 +18,8 @@
     <style><%@include file="/resources/css/welcome.css"%></style>
     <style><%@include file="/resources/css/layout.css"%></style>
     <style><%@include file="/resources/css/products.css"%></style>
+
+    <script type="text/javascript" src="resources/js/shopping.js"></script>
 </head>
 <body>
 
@@ -27,17 +30,22 @@
 
     <div class="row">
         <c:forEach items="${products}" var="product">
-            <div class="product col-2">
-                <form method='post'>
-                    <p class='detail'>${product.name}</p>
-                    <p class='price'>$${product.price}</p>
-                    <input type='hidden' name='prodId' value="${product.id}"/>
-                    <input type='submit' value='Add to Cart' class='detail' id='add'/>
-                </form>
+            <div class='product col-2'>
+                <prod:Product product="${product}" />
+                <input type='submit' value='Add to Cart' onclick='add("${product.id}")'
+                       class='detail button button2' id='add'/>
             </div>
+
         </c:forEach>
     </div>
 </section>
+<section id="about-us">
+    <h1>About Us</h1>
+    <p></p>
+</section>
+<script>
+
+</script>
 
 </body>
 

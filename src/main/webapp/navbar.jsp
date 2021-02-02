@@ -12,16 +12,16 @@
 <nav>
     <ul class="menu-bar" style="height: fit-content">
         <li>
-            <a href="shopping">Home</a>
+            <a href="/shopping">Home</a>
         </li>
         <c:if test="${user != null}">
             <li>
-                <span>${user}'s Cart (${cart.productsSize})</span>
+                <span>${user}'s Cart (<span id="count">${cart.productsSize}</span>)</span>
             </li>
         </c:if>
         <c:if test="${user == null}">
             <li>
-                <span>Guest's Cart (${cart.productsSize})</span>
+                <span>Guest's Cart (<span id="count">${cart.productsSize}</span>)</span>
             </li>
         </c:if>
 

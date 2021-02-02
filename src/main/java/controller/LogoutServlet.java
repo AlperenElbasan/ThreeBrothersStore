@@ -15,7 +15,8 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.setAttribute("cart", new Cart());
+        session.removeAttribute("cart");
+        //req.setAttribute("cart", new Cart());
         req.getSession().invalidate();
         resp.sendRedirect("/shopping");
     }
