@@ -6,27 +6,27 @@ $(document).ready(function () {
             thisForm = thisBtn.parents('form'),
             formUrl = thisForm.attr('action'),
             formMethod = thisForm.attr('method'),
-            formData = thisForm.serialize(),
             valid = validateForm(thisForm);
-        alert(valid);
+
         if(valid){
             let formID = thisForm.attr('id'),
                 formData = new FormData($('#'+ formID)[0]);
             $.ajax({
                 type: formMethod,
                 url: formUrl,
-                data: formData,
-                processData: false,
-                contentType: false,
+                data: {"userName":$('input[name=userName]').val(),"password":$('input[name=password]').val(),"remember":$('input[name=remember]').val()},
                 success: function (response) {
                     //alert(response);
-                    response = JSON.parse(response);
-                    if(response.status){
+                    if(response == 'True'){
+                        $('.section-alert').empty();
+                        thisForm.find('.section-alert').removeClass('alert-danger');
+                        thisForm.find('.section-alert').addClass('alert alert-success').text("Welcome....");
                         setTimeout(() => {
-                            window.location.href = response.redirect;
-                        }, 1000);
+                            window.location.href = '/shopping';
+                        }, 2000);
                     }else{
-
+                        $('.section-alert').empty();
+                        thisForm.find('.section-alert').addClass('alert alert-danger').text(response);
                     }
                 }
             });
@@ -44,7 +44,7 @@ function validateForm(selector) {
         if(inputVal === '' || inputVal.trim().length === 0){
             errors.push(inputName);
             $(this).addClass('has-error');
-            $(this).parents('div').addClass('has-error');
+            //$(this).parents('div').addClass('has-error');
         }
     });
     if(errors.length > 0){

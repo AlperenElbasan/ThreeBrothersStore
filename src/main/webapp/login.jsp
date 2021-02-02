@@ -16,21 +16,32 @@
     <link href="https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<div class="mx-auto my-auto">
-    <form class="auth-form" method="post" action="login">
-        <h1>Three Brothers Store</h1>
+<body class="text-center">
+<main class="form-signin border radius">
+    <form id="loginForm" method="post" action="login">
+        <h1 class="h3 mb-3 fw-normal">Three Brothers Store</h1>
         <p class="primary-color">Please login to continue</p>
-        <label>User Name: <input type="text" name="userName" class="form-control required" required /></label>
-        <label>Password: <input type="password" name="password" class="form-control required" required /></label>
-        <label>Remember Me: <input type="checkbox" name="remember" value="yes"/></label>
-        <input type="submit" name="submit" value="Submit" class="btn login-btn btn-block btn-primary text-uppercase">
+        <div class="section-alert"></div>
+        <div class="input-group mb-1">
+            <label for="usernameID" class="visually-hidden">User Name:</label>
+            <input type="text" name="userName" id="usernameID" class="form-control required" placeholder="User Name:" required />
+        </div>
+        <div class="input-group mb-1">
+            <label for="passwordID" class="visually-hidden">Password:</label>
+            <input type="password" id="passwordID" name="password" class="form-control required" placeholder="Password:" required />
+        </div>
+        <div class="input-group mb-1">
+            <label>Remember Me: <input type="checkbox" name="remember" value="yes"/></label>
+        </div>
+        <div class="input-group m-2 text-center">
+            <input type="submit" name="submit" value="LOGIN" class="btn login-btn btn-primary text-uppercase">
+        </div>
         <c:if test="${errMsg}">
             <p style="color: #ff0000">${errMsg}</p>
         </c:if>
-        <span class="ml-2 mt-5">Don't have an account yet? <a href="singUp">Sign up</a> </span>
+        <span class="mb-2 mt-5">Don't have an account yet? <a href="singUp">Sign up</a> </span>
     </form>
-</div>
+</main>
 <script src="<c:url value='resources/js/jquery.js' />" type="text/javascript"></script>
 <script src="<c:url value='resources/js/validation.js' />" type="text/javascript"></script>
 </body>

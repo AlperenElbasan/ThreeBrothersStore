@@ -48,10 +48,14 @@ public class LoginServlet extends HttpServlet {
             }
             resp.addCookie(c);
 
-            resp.sendRedirect("/shopping");
+            //resp.sendRedirect("/shopping");
+            resp.setContentType("text/html;charset=UTF-8");
+            resp.getWriter().write("True");
         } else {
-            session.setAttribute("errMsg", "Username or password is invalid!");
-            resp.sendRedirect("login");
+            //session.setAttribute("errMsg", "Username or password is invalid!");
+            //resp.sendRedirect("login");
+            resp.setContentType("text/html;charset=UTF-8");
+            resp.getWriter().write("Username or password is invalid!");
         }
     }
 
